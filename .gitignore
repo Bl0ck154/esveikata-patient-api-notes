@@ -1,0 +1,7 @@
+*.bak.*
+*.har
+*.jsonl
+*.sqlite
+*.db
+profile/
+captures/
