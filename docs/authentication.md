@@ -18,11 +18,11 @@ The patient portal frontend also requests:
 GET /api/patient/session/token
 ```
 
-That response is then used to initialize the newer ELAB iframe. The token should be treated as a credential and should not be logged or committed.
+That response is then used to initialize the newer ELAB iframe. The token should be treated as a credential and should not be logged or committed. Testing also showed that a client holding a valid patient cookie session can request this bridge token over HTTPS and exchange it directly with ELAB `/api/auth/authenticate`; the resulting ELAB cookie session does not require a continuously running browser either.
 
 ## Session persistence
 
-Browser-observed cookies included session cookies for the patient portal and the SSO domain. Because they are session cookies, browser/process lifetime and server-side timeout policy both matter.
+Browser-observed cookies included session cookies for the patient portal and the SSO domain. Although browsers normally discard session cookies when the browser session ends, an authorized local client can preserve the cookie values in a private cookie jar and continue authenticated HTTPS requests without keeping the browser process alive. Server-side timeout and invalidation policy still apply.
 
 A periodic authenticated request may keep a **sliding idle timeout** alive if the application server refreshes activity on requests. It cannot guarantee survival across:
 
