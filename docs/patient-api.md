@@ -71,6 +71,22 @@ GET /documents2/{documentId}
 
 The observed document JSON can contain order data, laboratory research metadata, specimen/storage information, encounter metadata, author/custodian/organization information and document status.
 
+For result documents such as `e200a`, observed structured fields include:
+
+```text
+analyteItems[].analyteName
+analyteItems[].value
+analyteItems[].normalReferenceRange
+researchInformation.usedAnalyzeMethod
+researchInformation.testPerformedAt
+researchInformation.diagnosticTestCombinedTitle
+researchInformation.selectedDiagnosticTestCode
+storageInformation.takeDatetime
+storageInformation.storageType
+```
+
+This makes the patient `documents2` surface a useful fallback/read path for laboratory results even when the newer embedded ELAB application's native list endpoint is unavailable.
+
 PDF-related frontend helpers construct:
 
 ```text
