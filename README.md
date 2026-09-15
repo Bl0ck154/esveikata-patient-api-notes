@@ -26,6 +26,7 @@ The parent patient portal obtains a short-lived session bridge token and passes 
 - [Authentication/session flow](docs/authentication.md)
 - [ELAB](docs/elab.md)
 - [Android mobile API](docs/mobile-api.md)
+- [IPR advance-registration API](docs/ipr.md)
 - [Security and scope](SECURITY.md)
 
 ## Important caveats
