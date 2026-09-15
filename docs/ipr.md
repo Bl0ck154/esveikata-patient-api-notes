@@ -57,6 +57,10 @@ The search is hierarchical:
 
 `leftBound`, `rightBound` and appointment dates are epoch milliseconds in the current frontend/API.
 
+A production quirk observed in September 2026: search envelopes can report `meta.totalPages = 0` and still emit a `links.next` value even when the next page is empty. The official frontend does not trust those fields to terminate pagination; it treats a page shorter than the requested page size as the last page. Clients that need completeness should mirror that behavior.
+
+The practitioner-details request (`/searches/appointments/times/details`) should inherit the selected parent group's `healthcareServiceId`, `organizationId`, `fundType.type`, `referralNeed.type`, `appointmentMethodId` and date bounds. Omitting `fundType` currently produces HTTP 400.
+
 Current search enum values observed in the frontend:
 
 ```text
