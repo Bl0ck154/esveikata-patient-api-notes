@@ -31,6 +31,10 @@ The parent patient portal obtains a short-lived session bridge token and passes 
 - **Maintenance:** No ongoing compatibility guarantee. Check against the current official portal before building integrations.
 - **Access:** Use only your own authorized session and data. No bypass of login, authorization or security controls is provided.
 
+## Integrating these notes
+
+For architecture choices, session-handling limits and a possible local MCP adapter, see [Integration options](docs/integration-options.md). This repository is research documentation, not an MCP server or a live patient-data connector.
+
 ## Documents
 
 - [Patient API](docs/patient-api.md)
