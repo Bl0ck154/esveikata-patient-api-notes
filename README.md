@@ -1,6 +1,10 @@
 # eSveikata Patient Portal API Notes
 
-Unofficial reverse-engineering notes for the Lithuanian eSveikata patient portal (`pacientas.esveikata.lt`) and the embedded ELAB application.
+> **Research snapshot — September 2026.** Unofficial API and interoperability notes, not an actively maintained SDK or an official integration.
+
+Unofficial research notes for Lithuania's **eSveikata patient portal** (`pacientas.esveikata.lt`), its embedded **ELAB laboratory results** application, and related patient-facing API flows.
+
+This repository is for people exploring legitimate interoperability, personal health-data portability, and read-only tooling for their own records. It is **not affiliated with eSveikata or Lithuanian healthcare authorities**.
 
 These notes document browser-observed request flows and frontend bundle behavior as of September 2026. They are intended for interoperability, personal data portability and read-only tooling for a user accessing their own health record.
 
@@ -19,6 +23,13 @@ https://specialistas.esveikata.lt/dp/elab/iframe/
 ```
 
 The parent patient portal obtains a short-lived session bridge token and passes it to the ELAB iframe, which exchanges it for its own cookie-backed session.
+
+## Scope and maintenance
+
+- **Last observed:** September 2026. The documented requests may no longer match the current portal.
+- **Format:** API research notes, endpoint observations and authentication-flow documentation — not a ready-to-run client, SDK or service.
+- **Maintenance:** No ongoing compatibility guarantee. Check against the current official portal before building integrations.
+- **Access:** Use only your own authorized session and data. No bypass of login, authorization or security controls is provided.
 
 ## Documents
 
