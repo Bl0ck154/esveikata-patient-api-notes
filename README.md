@@ -35,14 +35,18 @@ The parent patient portal obtains a short-lived session bridge token and passes 
 
 For architecture choices, session-handling limits and a possible local MCP adapter, see [Integration options](docs/integration-options.md). This repository is research documentation, not an MCP server or a live patient-data connector.
 
-## Documents
+## Find the relevant research note
 
-- [Patient API](docs/patient-api.md)
-- [Authentication/session flow](docs/authentication.md)
-- [ELAB](docs/elab.md)
-- [Android mobile API](docs/mobile-api.md)
-- [IPR advance-registration API](docs/ipr.md)
-- [Security and scope](SECURITY.md)
+| If you want to understand… | Read |
+| --- | --- |
+| Patient-facing request endpoints and response shapes | [Patient API](docs/patient-api.md) |
+| Login, short-lived sessions and the portal-to-ELAB handoff | [Authentication/session flow](docs/authentication.md) |
+| How laboratory results appear through ELAB | [ELAB notes](docs/elab.md) |
+| Observed Android/mobile request flows | [Android mobile API](docs/mobile-api.md) |
+| Appointment advance-registration observations | [IPR API](docs/ipr.md) |
+| Data handling, limitations and authorized access | [Security and scope](SECURITY.md) |
+
+These are **dated observations**, not a maintained integration library. If you are implementing your own read-only tool, validate each flow against the current portal and avoid putting real patient/session data in issues or examples.
 
 ## Important caveats
 
